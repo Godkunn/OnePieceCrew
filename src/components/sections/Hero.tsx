@@ -35,7 +35,6 @@ export default function Hero() {
       </motion.div>
 
       <motion.div 
-        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="z-10 text-center w-full max-w-4xl mx-auto"

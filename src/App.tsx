@@ -8,20 +8,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import ThreeScene from './components/effects/ThreeScene';
+import Hero from './components/sections/Hero';
+import LiveShow from './components/sections/LiveShow';
+import MerchSection from './components/sections/MerchSection';
+import CharacterExplorer from './components/sections/CharacterExplorer';
+import DevilFruitEncyclopedia from './components/sections/DevilFruitEncyclopedia';
+import LogPose from './components/layout/LogPose';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import HakiEffect from './components/effects/HakiEffect';
+import WantedModal from './components/modals/WantedModal';
 import { motion } from 'motion/react';
-import { useState, lazy, Suspense } from 'react';
-
-const ThreeScene = lazy(() => import('./components/effects/ThreeScene'));
-const Hero = lazy(() => import('./components/sections/Hero'));
-const LiveShow = lazy(() => import('./components/sections/LiveShow'));
-const MerchSection = lazy(() => import('./components/sections/MerchSection'));
-const CharacterExplorer = lazy(() => import('./components/sections/CharacterExplorer'));
-const DevilFruitEncyclopedia = lazy(() => import('./components/sections/DevilFruitEncyclopedia'));
-const LogPose = lazy(() => import('./components/layout/LogPose'));
-const Navbar = lazy(() => import('./components/layout/Navbar'));
-const Footer = lazy(() => import('./components/layout/Footer'));
-const HakiEffect = lazy(() => import('./components/effects/HakiEffect'));
-const WantedModal = lazy(() => import('./components/modals/WantedModal'));
+import { useState, Suspense } from 'react';
 
 export default function App() {
   const [isWantedModalOpen, setIsWantedModalOpen] = useState(false);
