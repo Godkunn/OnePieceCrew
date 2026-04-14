@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CHARACTERS, Character } from '../data/characters';
+import { CHARACTERS, Character } from '../../data/characters';
 import { Search, Shield, Sword, Skull, Anchor, X, Star } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';
 
 const CATEGORIES = [
   { name: 'Straw Hats', icon: <Anchor size={16} /> },

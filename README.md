@@ -46,13 +46,13 @@ Grand Line Explorer is a high-end web application designed for One Piece fans. I
 
 ## 📂 Project Structure
 
-- `src/components/ThreeScene.tsx`: Core 3D background engine.
-- `src/components/HakiEffect.tsx`: Global interactive click effects.
-- `src/components/Hero.tsx`: Parallax landing section.
-- `src/components/LiveShow.tsx`: Anime update cards.
-- `src/components/CharacterSection.tsx`: Crew member showcase.
-- `src/components/MerchSection.tsx`: 3D merchandise grid.
-- `src/components/WantedModal.tsx`: Interactive recruitment modal.
+- `src/components/layout/`: Global UI elements like `Navbar`, `Footer`, and the `LogPose` indicator.
+- `src/components/sections/`: Main content blocks including `Hero`, `LiveShow`, `CharacterExplorer`, `DevilFruitEncyclopedia`, and `MerchSection`.
+- `src/components/effects/`: Immersive visual elements like the `HakiEffect` and `ThreeScene` background.
+- `src/components/modals/`: Interactive overlays like the `WantedModal`.
+- `src/data/`: Centralized data files for characters and other content.
+- `src/lib/`: Utility functions and shared helpers.
+- `src/App.tsx`: The main application orchestrator.
 
 ## 📜 License
 
