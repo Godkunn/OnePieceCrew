@@ -1,30 +1,40 @@
-import { useRef, useMemo } from 'react';
+import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, PerspectiveCamera, Environment, Stars, Sparkles } from '@react-three/drei';
+import { Float, PerspectiveCamera, Environment, Stars, Sparkles, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
-function FloatingCoin() {
+function DevilFruit() {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.01;
-      meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.2;
+      meshRef.current.rotation.y += 0.005;
+      meshRef.current.rotation.z += 0.002;
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <mesh ref={meshRef}>
-        <cylinderGeometry args={[1, 1, 0.2, 32]} />
-        <meshStandardMaterial 
-          color="#FFD700" 
-          metalness={0.8} 
-          roughness={0.2} 
-          emissive="#B8860B"
-          emissiveIntensity={0.2}
-        />
-      </mesh>
+    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+      <group>
+        {/* Main Fruit Body */}
+        <mesh ref={meshRef}>
+          <sphereGeometry args={[1.2, 32, 32]} />
+          <MeshDistortMaterial 
+            color="#a855f7" 
+            speed={2} 
+            distort={0.4} 
+            radius={1}
+            emissive="#6b21a8"
+            emissiveIntensity={0.5}
+          />
+        </mesh>
+        
+        {/* Stem */}
+        <mesh position={[0, 1.4, 0]} rotation={[0, 0, 0.2]}>
+          <cylinderGeometry args={[0.1, 0.15, 0.6, 12]} />
+          <meshStandardMaterial color="#166534" />
+        </mesh>
+      </group>
     </Float>
   );
 }
@@ -32,12 +42,12 @@ function FloatingCoin() {
 function SeaParticles() {
   return (
     <Sparkles 
-      count={100} 
-      scale={10} 
-      size={2} 
-      speed={0.5} 
-      opacity={0.5} 
-      color="#00ffff" 
+      count={150} 
+      scale={15} 
+      size={1.5} 
+      speed={0.3} 
+      opacity={0.4} 
+      color="#38bdf8" 
     />
   );
 }
@@ -46,16 +56,17 @@ export default function ThreeScene() {
   return (
     <div className="fixed inset-0 -z-10 bg-[#020617]">
       <Canvas shadows dpr={[1, 2]}>
-        <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-        <Environment preset="city" />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+        <PerspectiveCamera makeDefault position={[0, 0, 6]} />
+        <Environment preset="night" />
+        <ambientLight intensity={0.2} />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#a855f7" />
+        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#38bdf8" />
         
-        <FloatingCoin />
+        <DevilFruit />
         <SeaParticles />
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={100} depth={50} count={6000} factor={4} saturation={0} fade speed={0.5} />
         
-        <fog attach="fog" args={['#020617', 5, 15]} />
+        <fog attach="fog" args={['#020617', 8, 20]} />
       </Canvas>
     </div>
   );

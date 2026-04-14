@@ -12,7 +12,9 @@ import ThreeScene from './components/ThreeScene';
 import Hero from './components/Hero';
 import LiveShow from './components/LiveShow';
 import MerchSection from './components/MerchSection';
-import CharacterSection from './components/CharacterSection';
+import CharacterExplorer from './components/CharacterExplorer';
+import DevilFruitEncyclopedia from './components/DevilFruitEncyclopedia';
+import LogPose from './components/LogPose';
 import HakiEffect from './components/HakiEffect';
 import WantedModal from './components/WantedModal';
 import { motion, AnimatePresence } from 'motion/react';
@@ -33,7 +35,8 @@ export default function App() {
 
   const navItems = [
     { name: 'Anime', id: 'anime' },
-    { name: 'Crew', id: 'crew' },
+    { name: 'Legends', id: 'legends' },
+    { name: 'Fruits', id: 'fruits' },
     { name: 'Merch', id: 'merch' }
   ];
 
@@ -41,6 +44,7 @@ export default function App() {
     <main className="relative min-h-screen overflow-x-hidden">
       {/* Interactive Effects */}
       <HakiEffect />
+      <LogPose />
       <WantedModal 
         isOpen={isWantedModalOpen} 
         onClose={() => setIsWantedModalOpen(false)} 
@@ -136,8 +140,12 @@ export default function App() {
           <LiveShow />
         </div>
 
-        <div id="crew" className="scroll-mt-20">
-          <CharacterSection />
+        <div id="legends" className="scroll-mt-20">
+          <CharacterExplorer />
+        </div>
+
+        <div id="fruits" className="scroll-mt-20">
+          <DevilFruitEncyclopedia />
         </div>
 
         <div id="merch" className="scroll-mt-20">

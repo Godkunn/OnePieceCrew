@@ -8,13 +8,15 @@ Grand Line Explorer is a high-end web application designed for One Piece fans. I
 
 ## ✨ Features
 
-- **3D Atmospheric Background**: A real-time 3D scene using `@react-three/fiber` with floating elements and sea-mist particles.
+- **3D Atmospheric Background**: A real-time 3D scene using `@react-three/fiber` with a morphing Devil Fruit and sea-mist particles.
 - **Conqueror's Haki Interaction**: Custom click effects that trigger red and black lightning bolts, simulating the legendary Haki power.
+- **Log Pose Scroll Indicator**: A dynamic side-bar indicator that tracks your journey through the site.
+- **Devil Fruit Encyclopedia**: A mystical gallery of iconic fruits with interactive hover effects.
 - **Parallax Hero Section**: Dynamic nautical elements that react to scroll depth.
 - **Interactive Wanted Posters**: A "Join the Crew" feature that generates a stylized Wanted Poster with celebratory effects.
 - **3D Merchandise Cards**: Product cards that tilt and react to mouse movement in 3D space.
 - **Fully Responsive**: Optimized for everything from small mobile devices (iPhone SE) to 4K Ultra-wide TVs.
-- **Live Broadcast Hub**: Real-time updates on the latest anime arcs and episodes.
+- **Egghead Island Updates**: Real-time updates on the latest anime arcs, including the Future Island and Vegapunk's message.
 
 ## 🚀 Tech Stack
 
